@@ -9,7 +9,7 @@ while True:
         continue
 
     print("AI: ", end="", flush=True)
-    
+
     # stream=Trueにすることで、生成された文字から順次表示されます
     stream = ollama.chat(
         model=model_name,
