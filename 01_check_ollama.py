@@ -2,7 +2,7 @@ import ollama
 
 print("Ollamaに接続中...")
 try:
-    response = ollama.generate(model='gemma2:2b', prompt='「接続成功です」と一言返してください。')
+    response = ollama.generate(model='gemma3:1b', prompt='「接続成功です」と一言返してください。')
     print("-" * 20)
     print(response['response'])
     print("-" * 20)
