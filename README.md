@@ -62,10 +62,20 @@ pip install -r requirements.txt
 ### 3. モデルのダウンロード
 
 当日のネットワーク混雑を避けるため、**事前に**ダウンロードしておいてください。
-`gemma2:2b`（約1.6GB）は軽量で、多くのPCでサクサク動きます。
+
+| モデル | サイズ | 特徴 |
+|---|---|---|
+| `gemma3:1b` | 約1GB | 軽量で高速。低スペックPCでも安心 |
+| `gemma3:4b` | 約3GB | より自然な日本語。メモリに余裕があればおすすめ |
+
+どちらか1つでOKです。迷ったら `gemma3:1b` から始めましょう。
 
 ```bash
-ollama pull gemma2:2b
+# 軽量版（おすすめ）
+ollama pull gemma3:1b
+
+# 高品質版（メモリに余裕がある方）
+ollama pull gemma3:4b
 ```
 
 ### 4. 動作確認
@@ -92,7 +102,7 @@ python 01_check_ollama.py
 |---|---|---|
 | `could not connect to a running Ollama instance` | Ollama アプリが起動していない | Ollama アプリを起動する（メニューバー/タスクバーにアイコンが出ればOK） |
 | `ConnectionError` | 同上 | 同上 |
-| `model not found` / `NotFoundError` | モデル未ダウンロード | `ollama pull gemma2:2b` を実行 |
+| `model not found` / `NotFoundError` | モデル未ダウンロード | `ollama pull gemma3:1b` を実行 |
 | `pip install` で「引数がない」エラー | ライブラリ名の指定忘れ | `pip install -r requirements.txt` または `pip install ollama` |
 | `Import "ollama" could not be resolved` | VS Code が仮想環境を認識していない | 上記「VS Code を使っている方へ」を参照 |
 
@@ -113,7 +123,7 @@ python 01_check_ollama.py
 Ollama では `Modelfile` を使って独自のキャラクターを定義できます（Docker の Dockerfile に似た仕組みです）。
 
 ```Modelfile
-FROM gemma2:2b
+FROM gemma3:1b
 SYSTEM あなたは愛媛在住のベテランエンジニアです。親しみやすい伊予弁で、初心者にもわかりやすく技術を教えてください。
 ```
 

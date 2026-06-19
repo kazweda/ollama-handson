@@ -1,7 +1,7 @@
 import ollama
 
 print("AIとの対話を開始します（Ctrl+Cで終了）")
-model_name = 'gemma2:2b'
+model_name = 'gemma3:1b'
 
 while True:
     user_input = input("\nユーザー: ")
