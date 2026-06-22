@@ -9,7 +9,8 @@ ollama-handson/
 ├── requirements.txt    # 必要なライブラリ (ollama など)
 ├── .gitignore          # Python用の設定
 ├── 01_check_ollama.py  # 疎通確認用（一番シンプルなコード）
-└── 02_chat_stream.py   # チャット形式（ストリーミング）のサンプル
+├── 02_chat_stream.py   # チャット形式（ストリーミング）のサンプル
+└── 03_vision.py        # 画像認識（vision）のサンプル
 ```
 
 ---
@@ -117,6 +118,25 @@ python 01_check_ollama.py
 1. `02_chat_stream.py` の `messages` を書き換えて、AIに「伊予弁で話すエンジニア」という役割を与えてみよう
 2. `ollama pull` で他のモデル（`phi3`, `llama3` など）を試して、回答の精度や速さを比較してみよう
 3. AIの回答をJSON形式で返させて、Pythonの辞書として扱ってみよう
+4. `03_vision.py` で画像認識を試してみよう（下記参照）
+
+### 画像認識（Vision）を試す
+
+`ollama show モデル名` で **Capabilities** に `vision` があるモデルは画像認識に対応しています。
+
+```bash
+# モデルの対応機能を確認
+ollama show gemma3:4b
+# → Capabilities に "vision" と表示されればOK
+
+# 画像を渡して説明させる
+python 03_vision.py photo.jpg
+
+# プロンプトを変えることもできます
+python 03_vision.py photo.jpg --prompt "この画像に写っている文字を読み取ってください"
+```
+
+> **注意:** `gemma3:1b` は vision 非対応です。画像認識を試すには `gemma3:4b` 以上を使ってください。
 
 ### 愛媛弁キャラの Modelfile
 

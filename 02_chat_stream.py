@@ -2,7 +2,10 @@ import argparse
 import ollama
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--model', default='gemma3:1b', help='使用するモデル名 (default: gemma3:1b)')
+parser.add_argument(
+    '--model', default='gemma3:1b',
+    help='使用するモデル名 (default: gemma3:1b)',
+)
 args = parser.parse_args()
 
 print(f"AIとの対話を開始します（Ctrl+Cで終了）(モデル: {args.model})")
