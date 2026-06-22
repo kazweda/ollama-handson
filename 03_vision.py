@@ -3,8 +3,15 @@ import ollama
 
 parser = argparse.ArgumentParser()
 parser.add_argument('image', help='画像ファイルのパス')
-parser.add_argument('--model', default='gemma3:4b', help='使用するモデル名 (default: gemma3:4b)')
-parser.add_argument('--prompt', default='この画像を日本語で説明してください。', help='プロンプト')
+parser.add_argument(
+    '--model', default='gemma3:4b',
+    help='使用するモデル名 (default: gemma3:4b)',
+)
+parser.add_argument(
+    '--prompt',
+    default='この画像を日本語で説明してください。',
+    help='プロンプト',
+)
 args = parser.parse_args()
 
 print(f"画像を解析中... (モデル: {args.model})")
