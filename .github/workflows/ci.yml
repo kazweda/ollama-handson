@@ -27,3 +27,4 @@ jobs:
       - run: pip install -r requirements.txt
       - run: python 01_check_ollama.py --help
       - run: python 02_chat_stream.py --help
+      - run: python 03_vision.py --help
