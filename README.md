@@ -79,6 +79,8 @@ ollama pull gemma3:1b
 ollama pull gemma3:4b
 ```
 
+> **動作環境の目安:** GPUがない一般的なノートPCでもCPUだけで動作します。目安として `gemma3:1b` はRAM 4GB程度〜、`gemma3:4b` はRAM 8GB程度〜あれば快適に動きます。お使いのPCのメモリが少ない場合は `gemma3:1b` を選んでください。
+
 ### 4. 動作確認
 
 ```bash
