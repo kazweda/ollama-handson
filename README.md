@@ -145,6 +145,7 @@ python 03_vision.py photo.jpg --prompt "この画像に写っている文字を�
 ### 愛媛弁キャラの Modelfile
 
 Ollama では `Modelfile` を使って独自のキャラクターを定義できます（Docker の Dockerfile に似た仕組みです）。
+`FROM` でベースにするモデルを指定し、`SYSTEM` でそのモデルのシステムプロンプト（役割・口調など）を固定できます。
 
 ```Modelfile
 FROM gemma3:1b
@@ -158,6 +159,10 @@ ollama create ehime-engineer -f Modelfile
 # 実行
 ollama run ehime-engineer
 ```
+
+`PARAMETER` での推論設定など、他の命令や詳しい構文は公式リファレンスを参照してください。
+
+https://docs.ollama.com/modelfile
 
 ### ローカル RAG（応用）
 
