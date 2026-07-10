@@ -49,7 +49,15 @@ ollama run ehime-engineer
 
 https://docs.ollama.com/modelfile
 
+より詳しい解説はこちらの記事もどうぞ。
+
+https://zenn.dev/kazweda/articles/093dd95dc509c0
+
 ## ローカル RAG（応用）
 
 インターネットを使わずに、手元の PDF やドキュメントを AI に読み込ませる仕組みです。
 `PyMuPDF` で PDF を読み込み、Ollama の embeddings モデルで検索エンジンを作ります。
+
+より詳しい解説はこちらの記事もどうぞ。
+
+https://zenn.dev/kazweda/articles/57a9e1d8a32154
