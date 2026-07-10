@@ -37,6 +37,20 @@ ollama-handson/
 
 ## 事前準備
 
+まず、このリポジトリをクローンしてください。
+
+```bash
+git clone https://github.com/PyEhime/ollama-handson.git
+cd ollama-handson
+```
+
+> **Windows PCで参加される方へ**
+> WSL または GitHub Desktop をインストール済みの場合は、git コマンドが使えることを確認しておいてください。
+> git 環境が未インストールの場合は [Git for Windows](https://gitforwindows.org/) のインストールをお勧めします。
+
+> **Macで参加される方へ**
+> ターミナルで `git` を初めて実行すると「"git"コマンドを実行するには"Command Line Tools"が必要です」といったダイアログが表示されるので、指示に従ってインストールしてください（Xcode本体は不要です）。
+
 ### 1. Ollama のインストール
 
 https://ollama.com/download からダウンロードしてインストールしてください。
