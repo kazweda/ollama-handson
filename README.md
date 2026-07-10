@@ -74,6 +74,8 @@ pip install -r requirements.txt
 
 どちらか1つでOKです。迷ったら `gemma3:1b` から始めましょう。
 
+> より新しい Gemma4 も公開されていますが、最小サイズでも7GB前後と重く、低スペックPCでの体験を優先するため本ハンズオンでは Gemma3 を採用しています。
+
 ```bash
 # 軽量版（おすすめ）
 ollama pull gemma3:1b
