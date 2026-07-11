@@ -1,5 +1,5 @@
 import argparse
-import ollama
+import ollama  # noqa: F401 (TODO実装で使用します)
 
 parser = argparse.ArgumentParser()
 parser.add_argument('image', help='画像ファイルのパス')
@@ -16,14 +16,10 @@ args = parser.parse_args()
 
 print(f"画像を解析中... (モデル: {args.model})")
 try:
-    response = ollama.chat(
-        model=args.model,
-        messages=[{
-            'role': 'user',
-            'content': args.prompt,
-            'images': [args.image],
-        }],
-    )
+    # TODO: ollama.chat() を呼び出し、response に受け取ってください
+    # ヒント: messages=[{'role': 'user', 'content': args.prompt, 'images': [args.image]}]
+    response = None
+
     print("-" * 20)
     print(response['message']['content'])
     print("-" * 20)
