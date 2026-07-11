@@ -10,8 +10,8 @@ ollama-handson/
 ├── requirements.txt    # 必要なライブラリ (ollama など)
 ├── .gitignore          # Python用の設定
 ├── 01_check_ollama.py  # 疎通確認用（一番シンプルなコード）
-├── 02_chat_stream.py   # チャット形式（ストリーミング）のサンプル
-└── 03_vision.py        # 画像認識（vision）のサンプル
+├── 02_chat_stream.py   # チャット形式（ストリーミング）：TODOを埋めて完成させます
+└── 03_vision.py        # 画像認識（vision）：TODOを埋めて完成させます
 ```
 
 ---
@@ -25,6 +25,9 @@ ollama-handson/
 3. ストリーミング形式でチャットしてみる
 
 これだけできれば、今日の目標は達成です。
+
+> `02_chat_stream.py` と `03_vision.py` は `# TODO` の部分を埋めて完成させる形式になっています。
+> 詰まったときは `solution` ブランチに完成版があるので、参考にしてください。
 
 ### 構造化出力（Structured Output）
 
