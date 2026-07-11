@@ -1,5 +1,5 @@
 import argparse
-import ollama
+import ollama  # noqa: F401 (TODO実装で使用します)
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -18,13 +18,10 @@ while True:
 
     print("AI: ", end="", flush=True)
 
-    # stream=Trueにすることで、生成された文字から順次表示されます
-    stream = ollama.chat(
-        model=model_name,
-        messages=[{'role': 'user', 'content': user_input}],
-        stream=True,
-    )
+    # TODO: ollama.chat() を stream=True で呼び出し、stream に受け取ってください
+    # ヒント: messages=[{'role': 'user', 'content': user_input}]
+    stream = None
 
-    for chunk in stream:
-        print(chunk['message']['content'], end='', flush=True)
+    # TODO: stream から順にチャンクを取り出し、
+    #       chunk['message']['content'] を print(..., end='', flush=True) してください
     print()
