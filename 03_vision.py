@@ -17,7 +17,8 @@ args = parser.parse_args()
 print(f"画像を解析中... (モデル: {args.model})")
 try:
     # TODO: ollama.chat() を呼び出し、response に受け取ってください
-    # ヒント: messages=[{'role': 'user', 'content': args.prompt, 'images': [args.image]}]
+    # ヒント: messages=[{'role': 'user', 'content': args.prompt,
+    #        'images': [args.image]}]
     response = None
 
     print("-" * 20)
