@@ -40,9 +40,10 @@ ollama-handson/
 
 ## 事前準備
 
-まず、このリポジトリをクローンしてください。
+まず、このリポジトリをクローンしてください。`~/Desktop` や `~/Documents` はmacOSのiCloud/WindowsのOneDriveによる同期対象になっていることが多く、同期中のファイルロックや遅延でトラブルの原因になりやすいため、`~/dev` など同期対象外のフォルダを使うことをお勧めします。
 
 ```bash
+mkdir -p ~/dev && cd ~/dev
 git clone https://github.com/PyEhime/ollama-handson.git
 cd ollama-handson
 ```
@@ -50,6 +51,7 @@ cd ollama-handson
 > **Windows PCで参加される方へ**
 > WSL または GitHub Desktop をインストール済みの場合は、git コマンドが使えることを確認しておいてください。
 > git 環境が未インストールの場合は [Git for Windows](https://gitforwindows.org/) のインストールをお勧めします。
+> また、デスクトップがOneDrive同期対象になっているケースが多いことに加え、ユーザー名に日本語やスペースが含まれる場合（例: `C:\Users\山田 太郎\Desktop`）、一部のCLIツールでパスがうまく扱えずエラーになることがあります。クローン先には `C:\dev` のような短く同期対象外のパスを使ってください。
 
 > **Macで参加される方へ**
 > ターミナルで `git` を初めて実行すると「"git"コマンドを実行するには"Command Line Tools"が必要です」といったダイアログが表示されるので、指示に従ってインストールしてください（Xcode本体は不要です）。
