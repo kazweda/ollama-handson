@@ -40,9 +40,10 @@ ollama-handson/
 
 ## 事前準備
 
-まず、このリポジトリをクローンしてください。
+まず、このリポジトリをクローンしてください。`~/Desktop` や `~/Documents` はmacOSのiCloud/WindowsのOneDriveによる同期対象になっていることが多く、同期中のファイルロックや遅延でトラブルの原因になりやすいため、`~/dev` など同期対象外のフォルダを使うことをお勧めします。
 
 ```bash
+mkdir -p ~/dev && cd ~/dev
 git clone https://github.com/PyEhime/ollama-handson.git
 cd ollama-handson
 ```
