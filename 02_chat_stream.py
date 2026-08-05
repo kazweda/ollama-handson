@@ -1,4 +1,5 @@
 import argparse
+
 import ollama  # noqa: F401 (TODO実装で使用します)
 
 parser = argparse.ArgumentParser()
