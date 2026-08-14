@@ -16,45 +16,19 @@ ollama-handson/
 
 ---
 
-## はじめに（Intro）
-
-### 最初のステップ
-
-1. Ollama をインストールする
-2. Python から Ollama を呼び出して、返事が返ってくることを確認する
-3. ストリーミング形式でチャットしてみる
-
-これだけできれば、今日の目標は達成です。
-
-> `02_chat_stream.py` と `03_vision.py` は `# TODO` の部分を埋めて完成させる形式になっています。
-> 詰まったときは `solution` ブランチに完成版があるので、参考にしてください。
-
-### 構造化出力（Structured Output）
-
-慣れてきたら、AIの回答をJSON形式で受け取ることに挑戦してみましょう。
-プログラムの一部として LLM を組み込むときに必須のテクニックです。
-
-例：ニュース記事を渡して `{"title": "...", "summary": "...", "keywords": [...]}` 形式で返させる
-
----
-
 ## 事前準備
 
-まず、このリポジトリをクローンしてください。`~/Desktop` や `~/Documents` はmacOSのiCloud/WindowsのOneDriveによる同期対象になっていることが多く、同期中のファイルロックや遅延でトラブルの原因になりやすいため、`~/dev` など同期対象外のフォルダを使うことをお勧めします。
+Git・Python・VS Code のインストール手順（Windows/Mac別）は事前準備ガイド記事にまとめてあります。まだお済みでない方は先にご覧ください。
+
+👉 [ハンズオン事前準備ガイド](https://netplan.co.jp/blog/2026/2026-08-14-handson-preparation-guide/)
+
+準備ができたら、このリポジトリをクローンしてください（`~/repos` など、クラウド同期対象外のフォルダがおすすめです）。
 
 ```bash
-mkdir -p ~/dev && cd ~/dev
+mkdir -p ~/repos && cd ~/repos
 git clone https://github.com/PyEhime/ollama-handson.git
 cd ollama-handson
 ```
-
-> **Windows PCで参加される方へ**
-> WSL または GitHub Desktop をインストール済みの場合は、git コマンドが使えることを確認しておいてください。
-> git 環境が未インストールの場合は [Git for Windows](https://gitforwindows.org/) のインストールをお勧めします。
-> また、デスクトップがOneDrive同期対象になっているケースが多いことに加え、ユーザー名に日本語やスペースが含まれる場合（例: `C:\Users\山田 太郎\Desktop`）、一部のCLIツールでパスがうまく扱えずエラーになることがあります。クローン先には `C:\dev` のような短く同期対象外のパスを使ってください。
-
-> **Macで参加される方へ**
-> ターミナルで `git` を初めて実行すると「"git"コマンドを実行するには"Command Line Tools"が必要です」といったダイアログが表示されるので、指示に従ってインストールしてください（Xcode本体は不要です）。
 
 ### 1. Ollama のインストール
 
@@ -121,13 +95,33 @@ python 01_check_ollama.py
 
 ---
 
+## はじめに（Intro）
+
+### 最初のステップ
+
+1. Ollama をインストールする
+2. Python から Ollama を呼び出して、返事が返ってくることを確認する
+3. ストリーミング形式でチャットしてみる
+
+これだけできれば、今日の目標は達成です。
+
+> `02_chat_stream.py` と `03_vision.py` は `# TODO` の部分を埋めて完成させる形式になっています。
+> 完成版は当日、解答例リポジトリを公開します。
+
+### 構造化出力（Structured Output）
+
+慣れてきたら、AIの回答をJSON形式で受け取ることに挑戦してみましょう。
+プログラムの一部として LLM を組み込むときに必須のテクニックです。
+
+例：ニュース記事を渡して `{"title": "...", "summary": "...", "keywords": [...]}` 形式で返させる
+
+---
+
 ## Tips
 
 ### VS Code を使っている方へ
 
-- 「Create a virtual environment?」という通知が出たら、**Yes** を選択すると環境構築がスムーズです。
-- `import ollama` に波線（警告）が出る場合は、画面右下の Python バージョン表示をクリックし、`.venv` のインタープリタを選択してください。
-- それでも消えない場合は `Cmd+Shift+P`（Windows: `Ctrl+Shift+P`）→「Python: Restart Language Server」を実行してください。
+セットアップ方法や `import ollama` の波線（警告）対処は[事前準備ガイド](https://netplan.co.jp/blog/2026/2026-08-14-handson-preparation-guide/)を参照してください。
 
 ### よくあるエラー
 
