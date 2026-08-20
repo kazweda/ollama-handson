@@ -26,7 +26,7 @@ Git・Python・VS Code のインストール手順（Windows/Mac別）は事前�
 
 ```bash
 mkdir -p ~/repos && cd ~/repos
-git clone https://github.com/PyEhime/ollama-handson.git
+git clone https://github.com/kazweda/ollama-handson.git
 cd ollama-handson
 ```
 
