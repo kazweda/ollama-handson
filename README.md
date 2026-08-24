@@ -106,7 +106,7 @@ python 01_check_ollama.py
 これだけできれば、今日の目標は達成です。
 
 > `02_chat_stream.py` と `03_vision.py` は `# TODO` の部分を埋めて完成させる形式になっています。
-> 完成版は当日、解答例リポジトリを公開します。
+> 詰まったときは `solution` ブランチに完成版があるので、参考にしてください。
 
 ### 構造化出力（Structured Output）
 
