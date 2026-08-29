@@ -1,4 +1,5 @@
 import argparse
+
 import ollama
 
 parser = argparse.ArgumentParser()
@@ -17,6 +18,6 @@ try:
     print("-" * 20)
     print(response['response'])
     print("-" * 20)
-except Exception as e:
+except Exception as e:  # noqa: BLE001 (ハンズオン用に全エラーを捕捉)
     print(f"エラーが発生しました: {e}")
     print("Ollamaアプリが起動しているか確認してください。")

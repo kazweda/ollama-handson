@@ -1,4 +1,5 @@
 import argparse
+
 import ollama
 
 parser = argparse.ArgumentParser()
@@ -27,6 +28,6 @@ try:
     print("-" * 20)
     print(response['message']['content'])
     print("-" * 20)
-except Exception as e:
+except Exception as e:  # noqa: BLE001 (ハンズオン用に全エラーを捕捉)
     print(f"エラーが発生しました: {e}")
     print("モデルがvisionに対応しているか確認してください: ollama show モデル名")
