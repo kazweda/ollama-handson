@@ -1,4 +1,5 @@
 import argparse
+
 import ollama
 
 parser = argparse.ArgumentParser()

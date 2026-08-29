@@ -10,46 +10,25 @@ ollama-handson/
 ├── requirements.txt    # 必要なライブラリ (ollama など)
 ├── .gitignore          # Python用の設定
 ├── 01_check_ollama.py  # 疎通確認用（一番シンプルなコード）
-├── 02_chat_stream.py   # チャット形式（ストリーミング）のサンプル
-└── 03_vision.py        # 画像認識（vision）のサンプル
+├── 02_chat_stream.py   # チャット形式（ストリーミング）：TODOを埋めて完成させます
+└── 03_vision.py        # 画像認識（vision）：TODOを埋めて完成させます
 ```
-
----
-
-## はじめに（Intro）
-
-### 最初のステップ
-
-1. Ollama をインストールする
-2. Python から Ollama を呼び出して、返事が返ってくることを確認する
-3. ストリーミング形式でチャットしてみる
-
-これだけできれば、今日の目標は達成です。
-
-### 構造化出力（Structured Output）
-
-慣れてきたら、AIの回答をJSON形式で受け取ることに挑戦してみましょう。
-プログラムの一部として LLM を組み込むときに必須のテクニックです。
-
-例：ニュース記事を渡して `{"title": "...", "summary": "...", "keywords": [...]}` 形式で返させる
 
 ---
 
 ## 事前準備
 
-まず、このリポジトリをクローンしてください。
+Git・Python・VS Code のインストール手順（Windows/Mac別）は事前準備ガイド記事にまとめてあります。まだお済みでない方は先にご覧ください。
+
+👉 [ハンズオン事前準備ガイド](https://netplan.co.jp/blog/2026/2026-08-14-handson-preparation-guide/)
+
+準備ができたら、このリポジトリをクローンしてください（`~/repos` など、クラウド同期対象外のフォルダがおすすめです）。
 
 ```bash
-git clone https://github.com/PyEhime/ollama-handson.git
+mkdir -p ~/repos && cd ~/repos
+git clone https://github.com/kazweda/ollama-handson.git
 cd ollama-handson
 ```
-
-> **Windows PCで参加される方へ**
-> WSL または GitHub Desktop をインストール済みの場合は、git コマンドが使えることを確認しておいてください。
-> git 環境が未インストールの場合は [Git for Windows](https://gitforwindows.org/) のインストールをお勧めします。
-
-> **Macで参加される方へ**
-> ターミナルで `git` を初めて実行すると「"git"コマンドを実行するには"Command Line Tools"が必要です」といったダイアログが表示されるので、指示に従ってインストールしてください（Xcode本体は不要です）。
 
 ### 1. Ollama のインストール
 
@@ -94,7 +73,7 @@ pip install -r requirements.txt
 
 どちらか1つでOKです。迷ったら `gemma3:1b` から始めましょう。
 
-> より新しい Gemma4 も公開されていますが、最小サイズでも7GB前後と重く、低スペックPCでの体験を優先するため本ハンズオンでは Gemma3 を採用しています。
+> より新しい Gemma4 も公開されています。軽量化された QAT 版（`gemma4:e2b-it-qat` など）なら最小約4.3GBまで抑えられますが、それでも `gemma3:4b`（約3GB）より重く、低スペックPCでの体験を優先するため本ハンズオンでは Gemma3 を採用しています。
 
 ```bash
 # 軽量版（おすすめ）
@@ -116,13 +95,33 @@ python 01_check_ollama.py
 
 ---
 
+## はじめに（Intro）
+
+### 最初のステップ
+
+1. Ollama をインストールする
+2. Python から Ollama を呼び出して、返事が返ってくることを確認する
+3. ストリーミング形式でチャットしてみる
+
+これだけできれば、今日の目標は達成です。
+
+> `02_chat_stream.py` と `03_vision.py` は `# TODO` の部分を埋めて完成させる形式になっています。
+> 詰まったときは `solution` ブランチに完成版があるので、参考にしてください。
+
+### 構造化出力（Structured Output）
+
+慣れてきたら、AIの回答をJSON形式で受け取ることに挑戦してみましょう。
+プログラムの一部として LLM を組み込むときに必須のテクニックです。
+
+例：ニュース記事を渡して `{"title": "...", "summary": "...", "keywords": [...]}` 形式で返させる
+
+---
+
 ## Tips
 
 ### VS Code を使っている方へ
 
-- 「Create a virtual environment?」という通知が出たら、**Yes** を選択すると環境構築がスムーズです。
-- `import ollama` に波線（警告）が出る場合は、画面右下の Python バージョン表示をクリックし、`.venv` のインタープリタを選択してください。
-- それでも消えない場合は `Cmd+Shift+P`（Windows: `Ctrl+Shift+P`）→「Python: Restart Language Server」を実行してください。
+セットアップ方法や `import ollama` の波線（警告）対処は[事前準備ガイド](https://netplan.co.jp/blog/2026/2026-08-14-handson-preparation-guide/)を参照してください。
 
 ### よくあるエラー
 
