@@ -61,6 +61,8 @@ ollama create ehime-engineer -f Modelfile
 ollama run ehime-engineer
 ```
 
+> 上の内容を保存した `Modelfile` は `solution` ブランチにあります。
+
 他の `PARAMETER` や命令、詳しい構文は公式リファレンスを参照してください。
 
 https://docs.ollama.com/modelfile
