@@ -32,7 +32,7 @@ ChatGPT などのクラウドAIと違い、Ollama のローカルモデルは**�
 > **注意:** Ollama には `gemma4:cloud` のように `:cloud` が付いたクラウドモデルや Web 検索の機能もあり、これらを使うとプロンプトは Ollama のサーバーに送られます。Python から `--model gemma4:cloud` のように指定した場合も同じです。
 > この教材の既定モデル（`gemma3:1b` / `gemma3:4b`）はローカルモデルなので、特別な設定をしなくてもデータは外に出ません。
 >
-> 誤ってクラウドモデルを使わないようにしたい場合は、`~/.ollama/server.json` に `{"disable_ollama_cloud": true}` と書いて Ollama を再起動すると、クラウド機能を無効にできます。この設定は Ollama 本体に対するものなので、Python からの実行にも効きます。環境変数 `OLLAMA_NO_CLOUD=1` でも同じことができますが、Python 側ではなく Ollama アプリ側に設定する必要があります（設定方法は[公式FAQ](https://docs.ollama.com/faq)を参照）。
+> 誤ってクラウドモデルを使わないようにしたい場合は、Ollama アプリの Settings で「Cloud」をオフにするのが手軽です。この設定は `~/.ollama/server.json` の `{"disable_ollama_cloud": true}` として保存され、ファイルを直接書き換えて Ollama を再起動しても同じです。Ollama 本体に対する設定なので、Python からの実行にも効きます。環境変数 `OLLAMA_NO_CLOUD=1` でも同じことができますが、Python 側ではなく Ollama アプリ側に設定する必要があります（設定方法は[公式FAQ](https://docs.ollama.com/faq)を参照）。
 
 ---
 
@@ -59,6 +59,12 @@ Ollama はデスクトップアプリとしても動作し、モデルのダウ�
 このハンズオンでは「モデルを起動しておき、裏側で動くAPIサーバーとしてPythonから呼び出す」
 使い方がメインですが、興味がある方はアプリ単体でも触ってみてください。
 詳しくは公式ドキュメント（https://docs.ollama.com/ ）を参照してください。
+
+> 起動時に Claude Code や Codex などとの「アプリ連携」画面が表示されることがありますが、このハンズオンでは使いません。
+> 「Connect」などは押さずに閉じてかまいません（Ollama 本体はバックグラウンドで動き続けます）。
+> 連携すると外部ツールの設定が書き換わったり、クラウドモデルを使う設定になったりする場合があるので注意してください。
+>
+> また、Settings の「Expose Ollama to the network」はオフのままにしてください。オンにすると、同じネットワーク（会場のWi-Fiなど）にいる他の人からもあなたの Ollama を使えるようになります。
 
 ### 2. Python 環境
 
