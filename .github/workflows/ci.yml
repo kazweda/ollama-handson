@@ -24,7 +24,12 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
-      - run: pip install -r requirements.txt
-      - run: python 01_check_ollama.py --help
-      - run: python 02_chat_stream.py --help
-      - run: python 03_vision.py --help
+      - run: pip install -r lesson1/requirements.txt
+      - name: Smoke test lesson1
+        working-directory: lesson1
+        run: |
+          python 01_check_ollama.py --help
+          python 02_chat_stream.py --help
+          python 03_vision.py --help
+          python solution/02_chat_stream.py --help
+          python solution/03_vision.py --help

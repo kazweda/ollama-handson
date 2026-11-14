@@ -4,15 +4,17 @@ PyEhime 勉強会用のハンズオン教材です。
 ローカルLLM（Ollama）を Python から操作し、軽量なモデルを手元のPCだけで（オフラインでも）動かす体験をします。
 
 ```
-ollama-handson/
+ollama-handson/lesson1/
 ├── README.md           # 手順書（メイン）
 ├── STEP_UP.md          # 余力がある人向けのステップアップ課題
 ├── requirements.txt    # 必要なライブラリ (ollama など)
-├── .gitignore          # Python用の設定
 ├── 01_check_ollama.py  # 疎通確認用（一番シンプルなコード）
 ├── 02_chat_stream.py   # チャット形式（ストリーミング）：TODOを埋めて完成させます
-└── 03_vision.py        # 画像認識（vision）：TODOを埋めて完成させます
+├── 03_vision.py        # 画像認識（vision）：TODOを埋めて完成させます
+└── solution/           # 02・03 の完成版と Modelfile（詰まったときの参考に）
 ```
+
+> 2026年8月のイベント当時は、これらのファイルがリポジトリ直下にありました。当時の状態は [`lesson1-2026` タグ](https://github.com/kazweda/ollama-handson/tree/lesson1-2026)で確認できます。
 
 ---
 
@@ -47,8 +49,10 @@ Git・Python・VS Code のインストール手順（Windows/Mac別）は事前�
 ```bash
 mkdir -p ~/repos && cd ~/repos
 git clone https://github.com/kazweda/ollama-handson.git
-cd ollama-handson
+cd ollama-handson/lesson1
 ```
+
+以降のコマンドは、この `lesson1` フォルダで実行します。
 
 ### 1. Ollama のインストール
 
@@ -131,7 +135,7 @@ python 01_check_ollama.py
 
 これだけできれば、このハンズオンの目標は達成です。
 
-> **詰まったときは:** `solution` ブランチに完成版があるので、参考にしてください。
+> **詰まったときは:** `solution` フォルダに完成版があるので、参考にしてください（まずは見ずに挑戦してみましょう）。
 
 > **オフラインでの確認:** 3 では、`01_check_ollama.py` や完成させた `02_chat_stream.py` を、ネットワークを切った状態で実行してください。インターネットにつながっていなくても返事が返ってくれば、モデルが手元のPCだけで動いていることを確かめられます。確認が終わったらネットワークを元に戻しましょう。
 > モデルのダウンロード（`ollama pull`）はオフラインではできないので、試したいモデルは先にダウンロードしておいてください。
