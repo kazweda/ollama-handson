@@ -62,7 +62,7 @@ ollama create ehime-engineer -f Modelfile
 ollama run ehime-engineer
 ```
 
-> 上の内容を保存した `Modelfile` は `solution` ブランチにあります。
+> 上の内容を保存した `Modelfile` は `solution` フォルダにあります（`ollama create ehime-engineer -f solution/Modelfile` でも作成できます）。
 
 他の `PARAMETER` や命令、詳しい構文は公式リファレンスを参照してください。
 
